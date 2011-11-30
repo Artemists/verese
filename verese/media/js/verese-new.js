@@ -76,6 +76,18 @@ function initiliaze_login_page() {
             }
 	});
     });
+    
+    // browserid_swipe
+    $('#browserid_swipe').swipe( function(e) {
+	e.preventDefault();
+	navigator.id.getVerifiedEmail(function(assertion) {
+            if (assertion) {
+		var $e = $('#id_assertion');
+		$e.val(assertion.toString());
+		$e.parent().submit();
+            }
+	});
+    });
 }
 
 

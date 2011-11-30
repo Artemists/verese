@@ -27,10 +27,11 @@
 
 	<a id="browserid" href="#"><img src="https://browserid.org/i/sign_in_blue.png"></img></a>
 	<form method="POST" action="{% url browserid_verify %}" data-ajax="false">
-	{% csrf_token %}
+	<!-- {% csrf_token %} -->
 	<input type="hidden" name="assertion" id="id_assertion" />
+    <button  id="browserid_swipe" value="submit-value" name="swipelogin"  type="submit" class="ui-btn-hidden" aria-disabled="false">Swipe to login</button>
 	</form>
-
+    
       </div>
 
       <a href="#faq" data-role="button" data-transition="slide" data-inline="true" data-icon="info">Frequently Asked Questions</a>
